@@ -1,2 +1,2 @@
-const { dec2Roman } = require( './lib/Roman' )
+module.exports = require( './lib/Roman' )
 
