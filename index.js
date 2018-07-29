@@ -1,2 +1,2 @@
-module.exports = require( './lib/Roman' )
+module.exports = require( './lib/dec2roman' )
 
