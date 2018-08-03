@@ -1,5 +1,5 @@
 const assert = require( 'assert' );
-const { dec2Roman } = require( '../index' )
+const { dec2Roman, roman2Dec } = require( '../index' )
 
 const values = {
   '1': 'I', '2': 'II', '3': 'III', '4': 'IV', '5': 'V', '6': 'VI',
@@ -16,7 +16,7 @@ const values = {
   '80000': 'L̅X̅X̅X̅', '90000': 'X̅C̅', '100000': 'C̅', '110000': 'C̅X̅',
   '120000': 'C̅X̅X̅', '200000': 'C̅C̅', '300000': 'C̅C̅C̅', '400000': 'C̅D̅',
   '500000': 'D̅', '600000': 'D̅C̅', '700000': 'D̅C̅C̅', '800000': 'D̅C̅C̅C̅',
-  '900000': 'C̅D̅', '1000000': 'M̅', '1100000': 'M̅C̅', '1200000': 'M̅C̅C̅',
+  '900000': 'C̅M̅', '1000000': 'M̅', '1100000': 'M̅C̅', '1200000': 'M̅C̅C̅',
   '2000000': 'M̅M̅', '3000000': 'M̅M̅M̅',
 }
 
@@ -25,5 +25,6 @@ describe( 'extended decimal to roman (with ibar)', () => {
   for ( let d in values ) {
     const r = values[d]
     it( `${d} -> ${r}`, () => assert.equal( dec2Roman( Number( d ) ), r ) )
+    it( `${r} -> ${d}`, () => assert.equal( roman2Dec( r ), d ) )
   }
 } )

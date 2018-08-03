@@ -15,13 +15,13 @@ const values = {
   '50000': 'L̅', '60000': 'L̅X̅', '70000': 'L̅X̅X̅', '80000': 'L̅X̅X̅X̅',
   '90000': 'X̅C̅', '100000': 'C̅', '110000': 'C̅X̅', '120000': 'C̅X̅X̅',
   '200000': 'C̅C̅', '300000': 'C̅C̅C̅', '400000': 'C̅C̅C̅C̅', '500000': 'D̅',
-  '600000': 'D̅C̅', '700000': 'D̅C̅C̅', '800000': 'D̅C̅C̅C̅', '900000': 'C̅D̅',
+  '600000': 'D̅C̅', '700000': 'D̅C̅C̅', '800000': 'D̅C̅C̅C̅', '400000': 'C̅D̅',
   '1000000': 'M̅', '1100000': 'M̅C̅', '1200000': 'M̅C̅C̅', '2000000': 'M̅M̅',
   '3000000': 'M̅M̅M̅',
 }
 
 
-describe( 'extended decimal to roman (with ibar)', () => {
+describe( 'extended decimal to roman (without ibar)', () => {
   for ( let d in values ) {
     const r = values[d]
     it( `${d} -> ${r}`, () => assert.equal( dec2Roman( Number( d ), {mode:'no_ibar'} ), r ) )
