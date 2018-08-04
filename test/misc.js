@@ -9,7 +9,29 @@ describe( 'misc', () => {
     it( 'throws < 0', () => assert.throws( () => dec2Roman( -100 ) ) )
     it( 'throws if mode is bad', () => assert.throws( () => dec2Roman( 100, { mode: 'abc' } ) ) )
   } )
+
   describe( 'roman2Dec', () => {
-    it( 'throws on bad symbol', () => assert.throws( () => roman2Dec( 'U' ) ) )
+
+    it( 'throws on bad symbol', () =>
+      assert.throws( () => roman2Dec( 'U' ) ) )
+
+    it( 'does not throw on correct value ordering', () =>
+      assert.doesNotThrow( () => roman2Dec( 'XV', { strict: true } ) ) )
+
+    it( 'throws on incorrect value ordering', () =>
+      assert.throws( () => roman2Dec( 'VX', { strict: true } ) ) )
+
+    it( 'does not throw on concurrent groups three or smaller', () =>
+      assert.doesNotThrow( () => roman2Dec( 'XVIII', { strict: true } ) ) )
+
+    it( 'does not throw on concurrent groups <= 3 (vinculum)', () =>
+      assert.doesNotThrow( () => roman2Dec( 'V̅V̅V̅', { strict: true } ) ) )
+
+    it( 'throws on concurrent groups larger than three', () =>
+      assert.throws( () => roman2Dec( 'XVIIII', { strict: true } ) ) )
+
+    it( 'throws on concurrent groups larger than three (vinculum)', () =>
+      assert.throws( () => roman2Dec( 'V̅V̅V̅V̅', { strict: true } ) ) )
+
   } )
 } )
