@@ -4,7 +4,7 @@ Convert [Roman](https://en.wikipedia.org/wiki/Roman_numerals) numbers
 to decimal and back. Supports [vinculum](https://en.wikipedia.org/wiki/Roman_numerals#Vinculum) for
 numbers larger than 3999.
 
-Demo at https://www.vperi.com/roman
+Demo at <https://www.vperi.com/roman>
 
 # Installation
 
@@ -24,12 +24,9 @@ Converts a {Number} into it's Roman equivalent.
 
 ### Parameters
 
--   `x`  {Number} the number to be converted into Roman
--   `mode` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** {String}
-        'ibar' - (Default) With vincumlum extensions. Use I̅ instead of M for extended 1000s.
-        'no_ibar' - With vincumlum extensions. Use M for all 1000s.
-        'no_ext' - Stick with basics. No vinculum extensions etc.
-    -   `mode.mode`   (optional, default `'ibar'`)
+-   `x` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** the number to be converted into Roman
+-   `$1` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
+    -   `$1.mode`   (optional, default `'ibar'`)
 
 Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The roman equivalent
 
@@ -40,5 +37,17 @@ Returns the decimal representation of a given Roman number {String}
 ### Parameters
 
 -   `str`  {String} The roman number to be converted
+-   `strict` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+    -   `strict.strict`   (optional, default `false`)
 
 Returns **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** the decimal equivalent
+
+## matchAll
+
+### Parameters
+
+-   `regex`  {RegExp}
+-   `sourceString`  
+-   `aggregator`  
+
+Returns **any** 
